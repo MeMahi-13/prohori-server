@@ -23,7 +23,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
 
     // Collections
     const medicineCollection = client.db("bangladesh").collection("medicines");
@@ -382,15 +382,12 @@ app.post("/users/register", upload.single("photo"), async (req, res) => {
 
     /** -------------------------------------------------- */
 
-    await client.db("admin").command({ ping: 1 });
-    console.log("✅ Connected to MongoDB successfully!");
+    // await client.db("admin").command({ ping: 1 });
+    // console.log("✅ Connected to MongoDB successfully!");
   } finally {
     // Keep connection alive
   }
 }
-
-
-
 
 
 run().catch(console.dir);
